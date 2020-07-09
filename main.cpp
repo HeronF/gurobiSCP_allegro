@@ -137,17 +137,16 @@ int main(){
 	ALLEGRO_COLOR cor_preta = al_map_rgb(0,0,0);	
 
 	float dx;
-	dx = (608/(malha_x-1));
+	dx = (4*(xf-xi)/(malha_x-1));
 	for(int i=0;i<malha_x;i++){ //desenho da grade de malha no eixo x.
 			
-		al_draw_line(i*dx,0,i*dx,576,cor_preta,0);	
+		al_draw_line(0,4*(xf-xi)-i*dx,4*(yf-yi),4*(xf-xi)-i*dx,cor_preta,0);	
 	}
 	float dy;
-	dy = 576/(malha_y-1);
+	dy = 4*(yf-yi)/(malha_y-1);
 	for(int i=0;i<malha_y;i++){ //idem em y.
 
-		al_draw_line(0,i*dy,608,i*dy,cor_preta,0);
-	
+		al_draw_line(i*dy,0,i*dy,4*(xf-xi),cor_preta,0);
 	}
 
 	for(int i=0;i<num_cortes;i++){ // desenhando retângulo dos cortes
